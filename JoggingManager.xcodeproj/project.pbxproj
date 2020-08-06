@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		05AA114824DC2FBD003F217B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA114724DC2FBD003F217B /* AppDelegate.swift */; };
 		05AA114A24DC2FBD003F217B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA114924DC2FBD003F217B /* SceneDelegate.swift */; };
-		05AA114C24DC2FBD003F217B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA114B24DC2FBD003F217B /* ViewController.swift */; };
 		05AA114F24DC2FBD003F217B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AA114D24DC2FBD003F217B /* Main.storyboard */; };
 		05AA115124DC2FBE003F217B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05AA115024DC2FBE003F217B /* Assets.xcassets */; };
 		05AA115424DC2FBE003F217B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AA115224DC2FBE003F217B /* LaunchScreen.storyboard */; };
+		05AA115F24DC420F003F217B /* Race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA115E24DC420F003F217B /* Race.swift */; };
+		05AA116124DC4216003F217B /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116024DC4216003F217B /* Runner.swift */; };
+		05AA116324DC4366003F217B /* RacesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116224DC4366003F217B /* RacesTableViewController.swift */; };
+		05AA116524DC4931003F217B /* RunnersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116424DC4931003F217B /* RunnersTableViewController.swift */; };
+		05AA116724DC494F003F217B /* EnterResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116624DC494F003F217B /* EnterResultsViewController.swift */; };
+		05AA116924DC495A003F217B /* RaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116824DC495A003F217B /* RaceController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		05AA114424DC2FBD003F217B /* JoggingManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AA114724DC2FBD003F217B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05AA114924DC2FBD003F217B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		05AA114B24DC2FBD003F217B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		05AA114E24DC2FBD003F217B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05AA115024DC2FBE003F217B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05AA115324DC2FBE003F217B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05AA115524DC2FBE003F217B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05AA115E24DC420F003F217B /* Race.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race.swift; sourceTree = "<group>"; };
+		05AA116024DC4216003F217B /* Runner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
+		05AA116224DC4366003F217B /* RacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesTableViewController.swift; sourceTree = "<group>"; };
+		05AA116424DC4931003F217B /* RunnersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnersTableViewController.swift; sourceTree = "<group>"; };
+		05AA116624DC494F003F217B /* EnterResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterResultsViewController.swift; sourceTree = "<group>"; };
+		05AA116824DC495A003F217B /* RaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,44 @@
 		05AA114624DC2FBD003F217B /* JoggingManager */ = {
 			isa = PBXGroup;
 			children = (
+				05AA115D24DC41FD003F217B /* Controllers */,
+				05AA115C24DC41F6003F217B /* Views */,
+				05AA115B24DC41E6003F217B /* Models */,
 				05AA114724DC2FBD003F217B /* AppDelegate.swift */,
 				05AA114924DC2FBD003F217B /* SceneDelegate.swift */,
-				05AA114B24DC2FBD003F217B /* ViewController.swift */,
 				05AA114D24DC2FBD003F217B /* Main.storyboard */,
 				05AA115024DC2FBE003F217B /* Assets.xcassets */,
 				05AA115224DC2FBE003F217B /* LaunchScreen.storyboard */,
 				05AA115524DC2FBE003F217B /* Info.plist */,
 			);
 			path = JoggingManager;
+			sourceTree = "<group>";
+		};
+		05AA115B24DC41E6003F217B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05AA115E24DC420F003F217B /* Race.swift */,
+				05AA116024DC4216003F217B /* Runner.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05AA115C24DC41F6003F217B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05AA116224DC4366003F217B /* RacesTableViewController.swift */,
+				05AA116424DC4931003F217B /* RunnersTableViewController.swift */,
+				05AA116624DC494F003F217B /* EnterResultsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05AA115D24DC41FD003F217B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05AA116824DC495A003F217B /* RaceController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05AA114C24DC2FBD003F217B /* ViewController.swift in Sources */,
+				05AA116524DC4931003F217B /* RunnersTableViewController.swift in Sources */,
 				05AA114824DC2FBD003F217B /* AppDelegate.swift in Sources */,
+				05AA116324DC4366003F217B /* RacesTableViewController.swift in Sources */,
+				05AA116124DC4216003F217B /* Runner.swift in Sources */,
+				05AA115F24DC420F003F217B /* Race.swift in Sources */,
+				05AA116924DC495A003F217B /* RaceController.swift in Sources */,
 				05AA114A24DC2FBD003F217B /* SceneDelegate.swift in Sources */,
+				05AA116724DC494F003F217B /* EnterResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
