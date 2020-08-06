@@ -9,5 +9,7 @@
 import Foundation
 
 struct Race: Codable {
+    var raceName: String
+    var raceId: Int
     
 }

@@ -9,39 +9,60 @@
 import UIKit
 
 class RacesTableViewController: UITableViewController {
+    
+    var races = [Race]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        RaceController.shared.fetchRaces { (races) in
+            if let races = races {
+                DispatchQueue.main.async {
+                    self.races = races
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowRaceSegue" {
+            let runnersTableViewController = segue.destination as! RunnersTableViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            runnersTableViewController.raceId = races[index].raceId
+        }
+    }
+    
+    func configure(_ cell: UITableViewCell, forCellAt indexPath: IndexPath) {
+        let race = races[indexPath.row]
+        cell.textLabel?.text = race.raceName
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return races.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "raceCellIdentifier", for: indexPath)
 
-        // Configure the cell...
+        configure(cell, forCellAt: indexPath)
 
         return cell
     }
-    */
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ShowRaceSegue", sender: nil)
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
