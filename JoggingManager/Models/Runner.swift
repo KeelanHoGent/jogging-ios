@@ -24,4 +24,8 @@ struct Runner: Codable {
         case raceId = "race_id"
         case ranking
     }
+    
+    func getCopy() -> Runner {
+        return Runner(startNumber: startNumber, name: name, gender: gender, finish: finish, raceId: raceId, ranking: ranking)
+    }
 }

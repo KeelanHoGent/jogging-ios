@@ -32,6 +32,11 @@ class RaceController {
         let runnersUrl = baseUrl.appendingPathComponent("races").appendingPathComponent(String(raceId))
         
         let task = URLSession.shared.dataTask(with: runnersUrl) { (data, response, error) in
+            if error != nil {
+                completion(nil)
+                return
+            }
+            
             let jsonDecoder = JSONDecoder()
             if let data = data,
                 let runners = try? jsonDecoder.decode(Array<Runner>.self, from: data) {
@@ -43,7 +48,32 @@ class RaceController {
         task.resume()
     }
     
-    func submitRunners(raceId: Int, runners: [Runner], completion: @escaping (Int?) -> Void) {
+    func submitRunners(runners: [Runner], completion: @escaping ([Runner]?) -> Void) {
+        let runnersUrl = baseUrl.appendingPathComponent("runners")
         
+        var request = URLRequest(url: runnersUrl)
+        request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let data: [Runner] = runners
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try? jsonEncoder.encode(data)
+        
+        request.httpBody = jsonData
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                completion(nil)
+                return
+            } else {
+                let jsonDecoder = JSONDecoder()
+                if let data = data,
+                    let runnerList = try? jsonDecoder.decode(Array<Runner>.self, from: data) {
+                    completion(runnerList)
+                } else {
+                    completion(nil)
+                }
+            }
+        }
+        task.resume()
     }
 }
