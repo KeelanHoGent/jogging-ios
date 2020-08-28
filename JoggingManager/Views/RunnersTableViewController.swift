@@ -12,12 +12,15 @@ class RunnersTableViewController: UITableViewController {
     
     var race: Race!
     var runners = [Runner]()
+    var loader = LoaderMethods.getStandardLoader()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = race.raceName
         tableView.backgroundColor = #colorLiteral(red: 0.5019607843, green: 0.7098039216, blue: 0.9137254902, alpha: 1)
+        
+        LoaderMethods.startLoading(view, loader: loader)
         
         RaceController.shared.fetchRunners(race.raceId) { (runners) in
             if let runners = runners {
@@ -31,7 +34,12 @@ class RunnersTableViewController: UITableViewController {
             self.runners = runners
             self.sortRunners()
             self.tableView.reloadData()
+            LoaderMethods.stopLoading(self.loader)
         }
+    }
+    
+    func startLoading() {
+        
     }
     
     func sortRunners() {

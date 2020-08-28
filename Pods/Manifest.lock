@@ -1,16 +1,22 @@
 PODS:
   - LoadingShimmer (1.0.3)
+  - NVActivityIndicatorView (5.0.1):
+    - NVActivityIndicatorView/Base (= 5.0.1)
+  - NVActivityIndicatorView/Base (5.0.1)
 
 DEPENDENCIES:
   - LoadingShimmer
+  - NVActivityIndicatorView
 
 SPEC REPOS:
   trunk:
     - LoadingShimmer
+    - NVActivityIndicatorView
 
 SPEC CHECKSUMS:
   LoadingShimmer: dd681218498ec9648f572b845a7299b9c62e8e30
+  NVActivityIndicatorView: 738e843cb8924e9e4fc3e559d0728031624bf860
 
-PODFILE CHECKSUM: e1bc8f92e2640fdfecea27fafd37f081ee4415a6
+PODFILE CHECKSUM: ea81014af9167554c5519c862977661f7f6a092e
 
 COCOAPODS: 1.9.3

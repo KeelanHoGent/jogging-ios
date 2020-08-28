@@ -7,5 +7,6 @@ target 'JoggingManager' do
 
   # Pods for JoggingManager
   pod 'LoadingShimmer'
+  pod 'NVActivityIndicatorView'
 
 end

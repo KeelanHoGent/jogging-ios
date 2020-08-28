@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		055F7C1424DD7C17009E07EF /* RunnerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F7C1324DD7C17009E07EF /* RunnerTableViewCell.swift */; };
 		0574C6EA24F6E153009D7898 /* SubmittedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574C6E924F6E153009D7898 /* SubmittedViewController.swift */; };
+		0574C6EC24F999D2009D7898 /* LoaderMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574C6EB24F999D2009D7898 /* LoaderMethods.swift */; };
 		05AA114824DC2FBD003F217B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA114724DC2FBD003F217B /* AppDelegate.swift */; };
 		05AA114A24DC2FBD003F217B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA114924DC2FBD003F217B /* SceneDelegate.swift */; };
 		05AA114F24DC2FBD003F217B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05AA114D24DC2FBD003F217B /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		055F7C1324DD7C17009E07EF /* RunnerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTableViewCell.swift; sourceTree = "<group>"; };
 		0574C6E924F6E153009D7898 /* SubmittedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmittedViewController.swift; sourceTree = "<group>"; };
+		0574C6EB24F999D2009D7898 /* LoaderMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderMethods.swift; sourceTree = "<group>"; };
 		05AA114424DC2FBD003F217B /* JoggingManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JoggingManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05AA114724DC2FBD003F217B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05AA114924DC2FBD003F217B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				05AA115024DC2FBE003F217B /* Assets.xcassets */,
 				05AA115224DC2FBE003F217B /* LaunchScreen.storyboard */,
 				05AA115524DC2FBE003F217B /* Info.plist */,
+				0574C6EB24F999D2009D7898 /* LoaderMethods.swift */,
 			);
 			path = JoggingManager;
 			sourceTree = "<group>";
@@ -136,7 +139,6 @@
 				6D19672D5643E840FC5B66B3 /* Pods-JoggingManager.debug.xcconfig */,
 				09D94BD5F63FCA2179805B7B /* Pods-JoggingManager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -257,6 +259,7 @@
 			files = (
 				05AA116524DC4931003F217B /* RunnersTableViewController.swift in Sources */,
 				0574C6EA24F6E153009D7898 /* SubmittedViewController.swift in Sources */,
+				0574C6EC24F999D2009D7898 /* LoaderMethods.swift in Sources */,
 				05AA114824DC2FBD003F217B /* AppDelegate.swift in Sources */,
 				05AA116324DC4366003F217B /* RacesTableViewController.swift in Sources */,
 				05AA116124DC4216003F217B /* Runner.swift in Sources */,

@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class RacesTableViewController: UITableViewController {
     
     var races = [Race]()
     var isEnterResults = Bool()
+    var loader = LoaderMethods.getStandardLoader()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        LoaderMethods.startLoading(view, loader: loader)
+        
         if !isEnterResults {
             title = "Races"
             tableView.backgroundColor = #colorLiteral(red: 0.5019607843, green: 0.7098039216, blue: 0.9137254902, alpha: 1)
@@ -29,6 +33,7 @@ class RacesTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.races = races
                     self.tableView.reloadData()
+                    LoaderMethods.stopLoading(self.loader)
                 }
             }
         }

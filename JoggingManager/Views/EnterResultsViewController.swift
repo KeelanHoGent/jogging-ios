@@ -15,6 +15,9 @@ class EnterResultsViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet var startNumberTextField: UITextField!
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var addRunnerButton: UIButton!
+    @IBOutlet var submitButton: UIBarButtonItem!
+    
+    let loader = LoaderMethods.getStandardLoader()
     
     var race: Race!
     var runners: [Runner] = []
@@ -29,13 +32,15 @@ class EnterResultsViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        errorLabel.textColor = .red
+        errorLabel.isHidden = true
+        
         startNumberTextField.placeholder = "Deelnemers laden..."
-        errorLabel.textColor = .orange
-        errorLabel.text = "Laden..."
-        errorLabel.textAlignment = .center
-        errorLabel.isHidden = false
         startNumberTextField.isEnabled = false
-        self.addRunnerButton.isEnabled = false
+        addRunnerButton.isEnabled = false
+        submitButton.isEnabled = false
+        
+        LoaderMethods.startLoading(view, loader: loader)
         
         RaceController.shared.fetchRunners(race.raceId) { (runners) in
             if let runners = runners {
@@ -57,11 +62,11 @@ class EnterResultsViewController: UIViewController, UITableViewDelegate, UITable
             self.tableView.reloadData()
             
             self.startNumberTextField.placeholder = "Startnummer"
-            self.errorLabel.textColor = .red
-            self.errorLabel.textAlignment = .left
-            self.errorLabel.isHidden = true
             self.startNumberTextField.isEnabled = true
             self.addRunnerButton.isEnabled = true
+            self.submitButton.isEnabled = true
+            
+            LoaderMethods.stopLoading(self.loader)
         }
     }
     

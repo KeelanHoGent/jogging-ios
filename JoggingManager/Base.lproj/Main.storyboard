@@ -176,6 +176,7 @@
                         <outlet property="addRunnerButton" destination="mpJ-Db-x3d" id="jY3-Af-jkV"/>
                         <outlet property="errorLabel" destination="uhN-0Q-9FY" id="Riq-SK-mP0"/>
                         <outlet property="startNumberTextField" destination="l3u-4d-nGs" id="JSM-k3-438"/>
+                        <outlet property="submitButton" destination="1GT-jj-uHh" id="iQH-bx-CHB"/>
                         <outlet property="tableView" destination="eZM-kG-BkM" id="T9I-oy-5U0"/>
                         <segue destination="l1x-K9-u8h" kind="presentation" identifier="SubmittedSegue" id="2OJ-yV-I3R"/>
                     </connections>
