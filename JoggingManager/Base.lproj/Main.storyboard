@@ -109,31 +109,23 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="pR6-t8-C4B">
-                                                            <rect key="frame" x="26" y="0.0" width="270" height="46.5"/>
+                                                            <rect key="frame" x="26" y="0.0" width="324" height="46.5"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StartNumber" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z4o-Gs-fbk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="23.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="23.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="caA-cg-K5K">
-                                                                    <rect key="frame" x="0.0" y="23.5" width="270" height="23"/>
+                                                                    <rect key="frame" x="0.0" y="23.5" width="324" height="23"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4J-2a-QLt">
-                                                            <rect key="frame" x="304" y="0.0" width="46" height="46.5"/>
-                                                            <state key="normal" title="Button"/>
-                                                        </button>
                                                     </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="I4J-2a-QLt" firstAttribute="top" secondItem="V9R-7T-B0J" secondAttribute="top" id="Zzg-ke-xDc"/>
-                                                        <constraint firstAttribute="trailing" secondItem="I4J-2a-QLt" secondAttribute="trailing" id="dwv-DC-u1F"/>
-                                                    </constraints>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
@@ -181,6 +173,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addRunnerButton" destination="mpJ-Db-x3d" id="jY3-Af-jkV"/>
                         <outlet property="errorLabel" destination="uhN-0Q-9FY" id="Riq-SK-mP0"/>
                         <outlet property="startNumberTextField" destination="l3u-4d-nGs" id="JSM-k3-438"/>
                         <outlet property="tableView" destination="eZM-kG-BkM" id="T9I-oy-5U0"/>

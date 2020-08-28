@@ -21,6 +21,7 @@
 		05AA116724DC494F003F217B /* EnterResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116624DC494F003F217B /* EnterResultsViewController.swift */; };
 		05AA116924DC495A003F217B /* RaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116824DC495A003F217B /* RaceController.swift */; };
 		05AA116B24DC915B003F217B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05AA116A24DC915B003F217B /* MenuViewController.swift */; };
+		761B6EDB025C28D4EC26DF8B /* Pods_JoggingManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2A053994B5A7CBBFB43B179 /* Pods_JoggingManager.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		05AA116624DC494F003F217B /* EnterResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterResultsViewController.swift; sourceTree = "<group>"; };
 		05AA116824DC495A003F217B /* RaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceController.swift; sourceTree = "<group>"; };
 		05AA116A24DC915B003F217B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		09D94BD5F63FCA2179805B7B /* Pods-JoggingManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggingManager.release.xcconfig"; path = "Target Support Files/Pods-JoggingManager/Pods-JoggingManager.release.xcconfig"; sourceTree = "<group>"; };
+		6D19672D5643E840FC5B66B3 /* Pods-JoggingManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JoggingManager.debug.xcconfig"; path = "Target Support Files/Pods-JoggingManager/Pods-JoggingManager.debug.xcconfig"; sourceTree = "<group>"; };
+		B2A053994B5A7CBBFB43B179 /* Pods_JoggingManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JoggingManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				761B6EDB025C28D4EC26DF8B /* Pods_JoggingManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				05AA114624DC2FBD003F217B /* JoggingManager */,
 				05AA114524DC2FBD003F217B /* Products */,
+				EE179FD2CD21EE033C84E5F4 /* Pods */,
+				55CB4D9F800134895816FA51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,24 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		55CB4D9F800134895816FA51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2A053994B5A7CBBFB43B179 /* Pods_JoggingManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE179FD2CD21EE033C84E5F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D19672D5643E840FC5B66B3 /* Pods-JoggingManager.debug.xcconfig */,
+				09D94BD5F63FCA2179805B7B /* Pods-JoggingManager.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05AA115824DC2FBE003F217B /* Build configuration list for PBXNativeTarget "JoggingManager" */;
 			buildPhases = (
+				64851A87C67C1204C75839FA /* [CP] Check Pods Manifest.lock */,
 				05AA114024DC2FBD003F217B /* Sources */,
 				05AA114124DC2FBD003F217B /* Frameworks */,
 				05AA114224DC2FBD003F217B /* Resources */,
+				A152F02D08B05725A84B9AFE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +207,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		64851A87C67C1204C75839FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JoggingManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A152F02D08B05725A84B9AFE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JoggingManager/Pods-JoggingManager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JoggingManager/Pods-JoggingManager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JoggingManager/Pods-JoggingManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05AA114024DC2FBD003F217B /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		05AA115924DC2FBE003F217B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D19672D5643E840FC5B66B3 /* Pods-JoggingManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,6 +425,7 @@
 		};
 		05AA115A24DC2FBE003F217B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09D94BD5F63FCA2179805B7B /* Pods-JoggingManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import LoadingShimmer
 
 class EnterResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var startNumberTextField: UITextField!
     @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var addRunnerButton: UIButton!
     
     var race: Race!
     var runners: [Runner] = []
@@ -27,9 +29,13 @@ class EnterResultsViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        errorLabel.text = "ERRORLABEL"
-        errorLabel.textColor = .red
-        errorLabel.isHidden = true
+        startNumberTextField.placeholder = "Deelnemers laden..."
+        errorLabel.textColor = .orange
+        errorLabel.text = "Laden..."
+        errorLabel.textAlignment = .center
+        errorLabel.isHidden = false
+        startNumberTextField.isEnabled = false
+        self.addRunnerButton.isEnabled = false
         
         RaceController.shared.fetchRunners(race.raceId) { (runners) in
             if let runners = runners {
@@ -49,6 +55,25 @@ class EnterResultsViewController: UIViewController, UITableViewDelegate, UITable
         DispatchQueue.main.async {
             self.runners = runners
             self.tableView.reloadData()
+            
+            self.startNumberTextField.placeholder = "Startnummer"
+            self.errorLabel.textColor = .red
+            self.errorLabel.textAlignment = .left
+            self.errorLabel.isHidden = true
+            self.startNumberTextField.isEnabled = true
+            self.addRunnerButton.isEnabled = true
+        }
+    }
+    
+    func showLoading(_ loading: Bool) {
+        if loading {
+            LoadingShimmer.startCovering(self.tableView, with: nil)
+            startNumberTextField.isEnabled = false
+            addRunnerButton.isEnabled = false
+        } else {
+            LoadingShimmer.stopCovering(self.tableView)
+            self.startNumberTextField.isEnabled = true
+            self.addRunnerButton.isEnabled = true
         }
     }
     
@@ -110,8 +135,15 @@ class EnterResultsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func uploadResults() {
+        // this makes it visible that the request is being processed, so the user knows something is happening even if it takes a bit longer than usual
+        showLoading(true)
+        
         RaceController.shared.submitRunners(runners: results) { (runners) in
             DispatchQueue.main.async {
+                // resetting view to previous state before request
+                self.showLoading(false)
+                
+                // prepare and do the segue after completion request
                 self.submitFailed = runners == nil
                 self.performSegue(withIdentifier: "SubmittedSegue", sender: nil)
             }
